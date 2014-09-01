@@ -1,8 +1,8 @@
 binaryRepository {
-    baseUrl = 'http://localhost:8081/artifactory'
-    releaseUrl = "$baseUrl/libs-release-local"
+    baseUrl = 'http://localhost:8081/nexus'
+    releaseUrl = "$baseUrl/content/repositories/releases"
     username = 'admin'
-    password = 'password'
+    password = 'admin123'
 }
 
 environments {
