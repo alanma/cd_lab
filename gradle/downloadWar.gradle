@@ -9,7 +9,9 @@ configurations {
 }
 
 dependencies {
-    todo group: project.group, name: project.name, version: project.version.toString(), ext: 'war'
+    //todo group: project.group, name: project.name, version: project.version, ext: 'war'
+    todo 'com.manning.gia:todo-web:1.0.80'
+    //todo "$project.group:$project.name:$project.version"
 }
 
 ext.downloadDir = file("$buildDir/download/artifacts")

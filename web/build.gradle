@@ -1,9 +1,47 @@
 apply plugin: 'war'
 apply plugin: 'jetty'
+apply plugin: 'cargo'
 //apply from: "$rootDir/gradle/functionalTest.gradle"
 apply from: "$rootDir/gradle/publishMaven.gradle"
 apply from: "$rootDir/gradle/sshDeploy.gradle"
 apply from: "$rootDir/gradle/smokeTest.gradle"
+//apply from: "$rootDir/gradle/cargoDeploy.gradle"
+//apply from: "$rootDir/gradle/downloadWar.gradle"
+
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.gradle.api.plugins:gradle-cargo-plugin:1.5.1'
+    }
+}
+
+cargo {
+    containerId = 'tomcat7x'
+    port = 9292
+
+
+
+    remote {
+        deployable {
+            file = file("$buildDir/download/artifacts/todo-web-" + project.version.toString() + ".war")
+        }
+
+        hostname = 'localhost'
+
+        username = 'tomcat'
+        password = 'tomcat'
+    }
+}
+tasks.cargoDeployRemote.dependsOn fetchToDoWar
+
+
+
+
 
 dependencies {
     compile project(':repository')
