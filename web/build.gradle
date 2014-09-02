@@ -1,15 +1,15 @@
 apply plugin: 'war'
 apply plugin: 'jetty'
-apply plugin: 'cargo'
+//apply plugin: 'cargo'
 //apply from: "$rootDir/gradle/functionalTest.gradle"
 apply from: "$rootDir/gradle/publishMaven.gradle"
-apply from: "$rootDir/gradle/sshDeploy.gradle"
-apply from: "$rootDir/gradle/smokeTest.gradle"
+//apply from: "$rootDir/gradle/sshDeploy.gradle"
+//apply from: "$rootDir/gradle/smokeTest.gradle"
 //apply from: "$rootDir/gradle/cargoDeploy.gradle"
 //apply from: "$rootDir/gradle/downloadWar.gradle"
 
 
-
+ /*
 buildscript {
     repositories {
         jcenter()
@@ -38,7 +38,7 @@ cargo {
     }
 }
 tasks.cargoDeployRemote.dependsOn fetchToDoWar
-
+*/
 
 
 
@@ -60,7 +60,7 @@ task createBuildInfoFile << {
 
 war {
     dependsOn createBuildInfoFile
-    baseName = 'todo'
+    baseName = 'todo-web'
 
     from(buildDir) {
         include 'build-info.properties'
