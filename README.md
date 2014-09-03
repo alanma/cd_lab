@@ -118,6 +118,7 @@ You will need the following Jenkins plugins:
 1. [Download](https://code.google.com/p/selenium/wiki/ChromeDriver) a Chrome driver for Geb/Selenium 
 2. Enable driver in gradle.properties with the correct path for your machine
 3. Add a new build step, todo_functional_tests between the 'code_quality' and 'distribution' step
+4. Run Gradle task 'localFunctionalTest'
 
  
 
