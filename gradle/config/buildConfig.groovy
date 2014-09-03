@@ -37,4 +37,4 @@ environments {
     }
 }
 
-seleniumDriver='/Users/kalle/bin/chromedriver' 
+//seleniumDriver='/Users/kalle/bin/chromedriver'

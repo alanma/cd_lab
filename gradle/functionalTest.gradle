@@ -32,6 +32,7 @@ ext {
     functionalTestReportDir = file("$test.reports.html.destination/functional")
     functionalTestResultsDir = file("$test.reports.junitXml.destination/functional")
     functionalCommonSystemProperties = ['geb.env': 'chrome', 'geb.build.reportsDir': reporting.file("$name/geb")]
+    functionalChromeDriver = project.hasProperty('chromeDriver') ? project.getProperty('chromeDriver') : null
 }
 
 ext {
@@ -68,7 +69,10 @@ task localFunctionalTest(type: Test) {
 check.dependsOn localFunctionalTest
 
 localFunctionalTest.doFirst {
-   systemProperty 'webdriver.chrome.driver', config.seleniumDriver       
+   systemProperty 'webdriver.chrome.driver', functionalChromeDriver
+}
+localFunctionalTest.onlyIf {
+    project.hasProperty('chromeDriver')
 }
 
 task remoteFunctionalTest(type: Test) {

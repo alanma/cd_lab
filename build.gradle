@@ -2,7 +2,7 @@ apply from: "$rootDir/gradle/envConfig.gradle"
 apply from: "$rootDir/gradle/versioning.gradle"
 apply plugin: 'sonar-runner'
 
-System.setProperty("webdriver.chrome.driver", "/Users/kalle/bin/chromedriver");
+//System.setProperty("webdriver.chrome.driver", "/Users/kalle/bin/chromedriver");
 
 sonarRunner {
     sonarProperties {
