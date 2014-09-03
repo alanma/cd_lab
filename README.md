@@ -95,21 +95,24 @@ You will need the following Jenkins plugins:
 
 1. [Download](http://tomcat.apache.org/download-70.cgi) and install Tomcat 7 
 2. Configure server port in $TOMCAT_HOME/conf/server.xml
-'''
-<Service name="Catalina">
-<Connector port="9292" protocol="HTTP/1.1" />
-'''
-3. Configure tomcat users
-'''
-<tomcat-users>
+
+  ```
+  <Service name="Catalina">
+  <Connector port="9292" protocol="HTTP/1.1" />
+  ```
+3. Configure tomcat users in $TOMCAT_HOME/conf/tomcat-users.xml 
+
+  ```
+  <tomcat-users>
     <role rolename="manager-gui"/>
     <role rolename="manager-script"/>
     <user username="manager" password="manager" roles="manager-gui,manager-script"/>
-</tomcat-users>
-'''
-4. Create a new build in Jenkins named ‘todo_deploy_test’
-5. Publish to test server using gradle (cargoRedeployRemote task) using switch -Penv=test
-6. This build step should be manually triggered as a ‘post-build action’ by the previous build step
+  </tomcat-users>
+  ```
+4. Start Tomcat $TOMCAT_HOME/bin/startup.sh 
+5. Create a new build in Jenkins named ‘todo_deploy_test’
+6. Publish to test server using gradle (cargoRedeployRemote task) using `switch -Penv=test`
+7. This build step should be manually triggered as a ‘post-build action’ by the previous build step
 
 
 7. Functional tests
