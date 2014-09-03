@@ -13,7 +13,7 @@ The purpose of this lab is to build a simple Continuous Delivery Pipeline. All h
 is done by Gradle tasks. We will use Jenkins to orchestrate the build. The last step of the build 
 pipeline, deploy to test, will require a manual trigger.
 
-When the pipe line is complete it will consist of the following build steps:
+When the pipeline is complete it will consist of the following build steps:
 
 1. `todo_initial` - compile and run unit tests 
 2. `todo_ineg_test` - run integration test
