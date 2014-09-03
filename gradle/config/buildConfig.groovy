@@ -9,8 +9,7 @@ environments {
     test {
         server {
             hostname = 'localhost'
-            sshPort = 22
-            port = 8099
+            port = 9292
             context = 'todo'
             username = 'manager'
             password = 'manager'
@@ -20,7 +19,6 @@ environments {
     uat {
         server {
             hostname = 'localhost'
-            sshPort = 22
             port = 8199
             context = 'todo'
             username = 'manager'
@@ -31,7 +29,6 @@ environments {
     production {
         server {
             hostname = 'localhost'
-            sshPort = 22
             port = 8299
             context = 'todo'
             username = 'manager'

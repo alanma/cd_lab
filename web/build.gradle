@@ -20,13 +20,17 @@ buildscript {
 
 cargo {
     containerId = 'tomcat7x'
-    port = 9292
+
+    port = config.server.port
 
     remote {
-        hostname = 'localhost'
+        hostname = config.server.hostname
+        username = config.server.username
+        password = config.server.password
+    }
 
-        username = 'tomcat'
-        password = 'tomcat'
+    deployable {
+        context = config.server.context
     }
 }
 
