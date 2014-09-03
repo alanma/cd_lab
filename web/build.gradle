@@ -55,6 +55,7 @@ war {
     }
 }
 
-jettyRun {
-	contextPath = 'todo'
-}
+httpPort = 8097
+[jettyRun, jettyRunWar]*.contextPath = 'todo'
+[jettyRun, jettyRunWar, jettyStop]*.stopPort = 8098
+[jettyRun, jettyRunWar, jettyStop]*.stopKey = 'stopKey'

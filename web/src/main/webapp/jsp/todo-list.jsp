@@ -1,4 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import = "java.util.ResourceBundle" %>
+<%
+    String version = "SNAPSHOT";
+    try {
+        ResourceBundle resource = ResourceBundle.getBundle("build-info");
+        version = resource.getString("version");
+    } catch (java.util.MissingResourceException e){}
+%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -78,6 +86,7 @@
 </section>
 <div id="info">
     <p>Double-click to edit a todo</p>
+    <p><%=version %></p>
 </div>
 </body>
 </html>
