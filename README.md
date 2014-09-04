@@ -35,6 +35,7 @@ Lab
 1. Start Jenkins -> java -jar /usr/local/opt/jenkins/libexec/jenkins.war
 2. Start Nexus   -> nexus start  
 3. Clone Github Project -> [Github](https://github.com/kallestenflo/cd_lab) 
+4. Verify that project works on your local machine -> ./gradlew :web:jettyRun
 
 1. Compile and Run Unit Tests
 -----------------------------
