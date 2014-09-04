@@ -1,8 +1,8 @@
 binaryRepository {
     baseUrl = 'http://localhost:8081/nexus'
     releaseUrl = "$baseUrl/content/repositories/releases"
-    username = 'admin'
-    password = 'admin123'
+    username = project.getProperty('nexusUsername')
+    password = project.getProperty('nexusPassword')
 }
 
 environments {
