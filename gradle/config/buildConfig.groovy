@@ -36,5 +36,3 @@ environments {
         }
     }
 }
-
-//seleniumDriver='/Users/kalle/bin/chromedriver'
