@@ -21,13 +21,20 @@ When the pipeline is complete it will consist of the following build steps:
 4. `todo_distribution` - upload artifact to Nexus
 5. `todo_deploy_test` - deploy webapp to test server
 
+Resources
+=========
 
-LAB
+* [Gradle User Guide](http://www.gradle.org/docs/current/userguide/userguide_single.html)
+* [Jenkins Docs](https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins)
+* [Repository Management with Nexus](http://books.sonatype.com/nexus-book/reference/)
+* [Building a Continuous Delivery Pipeline with Gradle and Jenkins](http://www.infoq.com/presentations/cd-gradle-jenkins)
+
+Lab
 ===
 
-Start Jenkins -> java -jar /usr/local/opt/jenkins/libexec/jenkins.war
-Start Nexus   -> nexus start  
-Clone project -> [Github](https://github.com/kallestenflo/cd_lab) 
+1. Start Jenkins -> java -jar /usr/local/opt/jenkins/libexec/jenkins.war
+2. Start Nexus   -> nexus start  
+3. Clone Github Project -> [Github](https://github.com/kallestenflo/cd_lab) 
 
 1. Compile and Run Unit Tests
 -----------------------------
@@ -111,7 +118,7 @@ You will need the following Jenkins plugins:
   ```
 4. Start Tomcat $TOMCAT_HOME/bin/startup.sh 
 5. Create a new build in Jenkins named `todo_deploy_test`
-6. Publish to test server using gradle task `cargoRedeployRemote`) using switch `-Penv=test`
+6. Publish to test server using gradle task `cargoRedeployRemote` using switch `-Penv=test` 
 7. This build step should be manually triggered as a `post-build action` by the previous build step
 
 
