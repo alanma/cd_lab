@@ -1,8 +1,17 @@
+# Mac
 .DS_Store
-build
-out
-*.iml
-*.ipr
+
+# Eclipse
+.settings/
+.classpath
+.project
+
+# Maven
+target/
+
+#IntelliJ
+.idea/
+target
 *.iws
-.idea
-.gradle
+*.ipr
+*.iml
